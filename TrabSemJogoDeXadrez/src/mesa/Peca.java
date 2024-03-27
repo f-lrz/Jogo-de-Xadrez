@@ -1,21 +1,30 @@
 package mesa;
 
 public class Peca {
-    private String nome;
+    //private String nome;
+    private String cor;
     private int movimentacao;
     private String status;
 
-    public Peca(String nome, int m, String status){
-        setNome(nome);
+    public Peca(/*String nome,*/ String cor, int m, String status){
+        //setNome(nome);
+        setCor(cor);
         setMovimentacao(m);
         setStatus(status);
     }
 
-    public String getNome(){
+    /*public String getNome(){
         return nome;
     } 
     public void setNome(String n){
         nome = n;
+    }*/
+
+    public String getCor(){
+        return cor;
+    } 
+    public void setCor(String c){
+        cor = c;
     }
 
     public int getMovimentacao(){
