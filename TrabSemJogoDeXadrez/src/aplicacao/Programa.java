@@ -7,23 +7,16 @@ public class Programa {
 
 	public static void main(String[] args) {
 
-		Tabuleiro t[][] = new Tabuleiro[8][8]; // criação do tabulerio com suas casas
+		// criação e instanciação do tabulerio com suas casas
+		Tabuleiro t = new Tabuleiro();
+
 		
-		for(int i = 0; i < 8; i++){  // instanciação do tabuleiro e suas casas
-			for(int j = 0; j < 8; j++){
-				t[i][j] = new Tabuleiro();
-				System.out.print(t[i][j].getCasa() + " ");
-			}
-			System.out.println("");
-		}/**/
-
-
 		// criação e instanciação dos peões
 		Peca peao[] = new Peca[16];
-		for(int i = 0; i < 8; i++) {
+		for(int i = 1; i <= 8; i++) {
 			peao[i] = new Peca(/*"peao",*/ "branca", 1, "inativo");
 		}
-		for(int i = 8; i < 16; i++) { 
+		for(int i = 9; i <= 16; i++) { 
 			peao[i] = new Peca(/*"peao",*/ "preta", 1, "inativo");
 		}
 
@@ -53,7 +46,8 @@ public class Programa {
 		Peca rainha1 = new Peca(/*"rainha",*/ "preta", 6, "inativo");
 		Peca rainha2 = new Peca(/*"rainha",*/ "preta", 6, "inativo");
 		
-		
+		t.imprimetab();
+		System.out.println("   a b c d e f g h");
 
 	}
 
