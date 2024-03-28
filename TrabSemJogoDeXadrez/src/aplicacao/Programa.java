@@ -1,23 +1,24 @@
 package aplicacao;
 
-import mesa.Tabuleiro;
-import mesa.Peca;
+import mesa.*;
+
 
 public class Programa {
 
 	public static void main(String[] args) {
 
 		// criação e instanciação do tabulerio com suas casas
+		
 		Tabuleiro t = new Tabuleiro();
 
 		
 		// criação e instanciação dos peões
 		Peca peao[] = new Peca[16];
-		for(int i = 1; i <= 8; i++) {
-			peao[i] = new Peca(/*"peao",*/ "branca", 1, "inativo");
+		for(int i = 0; i < 8; i++) {
+		    peao[i] = new Peca(/*"peao",*/ "branca", 1, "inativo");
 		}
-		for(int i = 9; i <= 16; i++) { 
-			peao[i] = new Peca(/*"peao",*/ "preta", 1, "inativo");
+		for(int i = 8; i < 16; i++) { 
+		    peao[i] = new Peca(/*"peao",*/ "preta", 1, "inativo");
 		}
 
 		// criação e instanciação das torres
