@@ -4,17 +4,21 @@ import javax.swing.plaf.synth.SynthSplitPaneUI;
 
 public class Tabuleiro {
 	
-	private int[][]sensorp;
-	private String[][]casa;
+	private int[][] sensorp;
+	private String[][] casa;
 
 	public Tabuleiro(){
-		sensorp = new int[9][9]; 
-        casa = new String[9][9];
+		sensorp = new int[8][8]; 
+        casa = new String[8][8];
 		
-		for(int i = 1; i <= 8; i++){
-			for(int j = 1; j <= 8; j++){
+		for(int i = 0; i < 8; i++){
+			for(int j = 0; j < 8; j++){
 				sensorp[i][j] = 0;
-				casa[i][j] = "i + j";
+				String e = j + "";
+				String f = i + e;
+				casa[i][j] = f;
+				// casa[i][j].substring(0,1 ou 1,2); 
+				//funcao q retorna o primeiro ou o segundo caractere da string
 			}
 		}
 	}
@@ -34,6 +38,7 @@ public class Tabuleiro {
 	}
 
 	public void imprimetab() {
+		System.out.println();
 	    System.out.println("   a b c d e f g h");
 	    for (int i = 0; i < 8; i++) {
 	        System.out.print((i + 1) + " |"); 
@@ -48,7 +53,9 @@ public class Tabuleiro {
 	            System.out.print("|");
 	        }
 	        System.out.println();
+	        
 	    }
+		System.out.println();
 	}
 
 }

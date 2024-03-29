@@ -1,7 +1,8 @@
 package aplicacao;
 
 import mesa.*;
-
+import java.util.Scanner;
+import java.io.IOException;
 
 public class Programa {
 
@@ -46,9 +47,45 @@ public class Programa {
 		// criação e instanciação das rainhas
 		Peca rainha1 = new Peca(/*"rainha",*/ "preta", 6, "inativo");
 		Peca rainha2 = new Peca(/*"rainha",*/ "preta", 6, "inativo");
-		
-		t.imprimetab();
-		System.out.println("   a b c d e f g h");
+
+		Scanner sc = new Scanner(System.in);
+		int r;
+		boolean v1 = true;
+		boolean v2 = true;
+
+		do{
+			System.out.println();
+			System.out.println("Digite '1' para visualizar o tabuleiro (vazio).");
+			System.out.println("Digite '2' para visualizar alguma peça.");
+			do{
+				r = sc.nextInt();
+				if(r == 1){
+					t.imprimetab();
+					System.out.println();
+				}
+				else if(r == 2){
+
+				}
+				else{
+					System.out.println("Entrada invalida. Digite novamente");
+					System.out.println("'1' para visualizar o tabuleiro (vazio).");
+					System.out.println("'2' para visualizar alguma peça.");
+					v2 = false;
+				}
+			}while(!v2);
+
+			System.out.println("Deseja ver voltar ao inicio? ('1' = sim, '0' = nao)");
+			r = sc.nextInt();
+			if(r == 1) v1 = false;
+			else if(r == 0){
+				v1 = true;
+				System.out.println();
+				System.out.println("Obrigado <3");
+				System.out.println();
+				
+			}
+
+		}while(!v1);
 
 	}
 
