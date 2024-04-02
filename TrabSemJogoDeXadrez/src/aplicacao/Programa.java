@@ -4,6 +4,7 @@ import mesa.*;
 import java.util.Scanner;
 
 import javax.print.attribute.SupportedValuesAttribute;
+import javax.swing.event.SwingPropertyChangeSupport;
 import javax.swing.plaf.synth.SynthSplitPaneUI;
 
 import java.io.IOException;
@@ -13,9 +14,7 @@ public class Programa {
 	public static void main(String[] args) {
 
 		// criação e instanciação do tabulerio com suas casas
-		
 		Tabuleiro t = new Tabuleiro();
-
 		
 		// criação e instanciação dos peões
 		Peca peao[] = new Peca[16];
@@ -26,31 +25,47 @@ public class Programa {
 		    peao[i] = new Peca(/*"peao",*/ "preta", 1, "inativo");
 		}
 
-		// criação e instanciação das torres
-		Peca torre1 = new Peca(/*"torre",*/ "branca", 2, "inativo");
-		Peca torre2 = new Peca(/*"torre",*/ "branca", 2, "inativo");
-		Peca torre3 = new Peca(/*"torre",*/ "preta", 2, "inativo");
-		Peca torre4 = new Peca(/*"torre",*/ "preta", 2, "inativo");
 
-		// criação e instanciação dos cavalos
-		Peca cavalo1 = new Peca(/*"cavalo",*/ "branca", 3, "inativo");
-		Peca cavalo2 = new Peca(/*"cavalo",*/ "branca", 3, "inativo");
-		Peca cavalo3 = new Peca(/*"cavalo",*/ "preta", 3, "inativo");
-		Peca cavalo4 = new Peca(/*"cavalo",*/ "preta", 3, "inativo");
+		// criação das torres
+		Peca torre[] = new Peca[4];
+		//instanciação das torres
+		torre[0] = new Peca(/*"torre",*/ "branca", 2, "inativo");
+		torre[1] = new Peca(/*"torre",*/ "branca", 2, "inativo");
+		torre[2] = new Peca(/*"torre",*/ "preta", 2, "inativo");
+		torre[3] = new Peca(/*"torre",*/ "preta", 2, "inativo");
 
-		// criação e instanciação dos bispos
-		Peca bispo1 = new Peca(/*"bispo",*/ "branca", 4, "inativo");
-		Peca bispo2 = new Peca(/*"bispo",*/ "branca", 4, "inativo");
-		Peca bispo3 = new Peca(/*"bispo",*/ "preta", 4, "inativo");
-		Peca bispo4 = new Peca(/*"bispo",*/ "preta", 4, "inativo");
 
-		// criação e instanciação dos reis
-		Peca rei1 = new Peca(/*"rei",*/ "branca", 5, "inativo");
-		Peca rei2 = new Peca(/*"rei",*/ "branca", 5, "inativo");
+		// criação dos cavalos
+		Peca cavalo[] = new Peca[4];
+		// instanciação dos cavalos
+		cavalo[0] = new Peca(/*"cavalo",*/ "branca", 3, "inativo");
+		cavalo[1] = new Peca(/*"cavalo",*/ "branca", 3, "inativo");
+		cavalo[2] = new Peca(/*"cavalo",*/ "preta", 3, "inativo");
+		cavalo[3] = new Peca(/*"cavalo",*/ "preta", 3, "inativo");
 
-		// criação e instanciação das rainhas
-		Peca rainha1 = new Peca(/*"rainha",*/ "preta", 6, "inativo");
-		Peca rainha2 = new Peca(/*"rainha",*/ "preta", 6, "inativo");
+
+		// criação dos bispos
+		Peca bispo[] = new Peca[4];
+		//instanciação dos bispos
+		bispo[0] = new Peca(/*"bispo",*/ "branca", 4, "inativo");
+		bispo[2] = new Peca(/*"bispo",*/ "branca", 4, "inativo");
+		bispo[2] = new Peca(/*"bispo",*/ "preta", 4, "inativo");
+		bispo[3] = new Peca(/*"bispo",*/ "preta", 4, "inativo");
+
+
+		// criação dos reis
+		Peca rei[] = new Peca[2];
+		// instanciação dos reis
+		rei[0] = new Peca(/*"rei",*/ "branca", 5, "inativo");
+		rei[1] = new Peca(/*"rei",*/ "branca", 5, "inativo");
+
+
+		// criação das rainhas
+		Peca rainha[] = new Peca[2];
+		//instanciação das rainhas
+		rainha[0] = new Peca(/*"rainha",*/ "preta", 6, "inativo");
+		rainha[1] = new Peca(/*"rainha",*/ "preta", 6, "inativo");
+
 
 		Scanner sc = new Scanner(System.in);
 		int r;
@@ -80,41 +95,47 @@ public class Programa {
 					r = sc.nextInt();
 
 					if(r == 1){
-						System.out.println("\nNome: Peão");
-						System.out.println("Cor: " + peao[0].getCor() + " ou " + peao[8].getCor());
-						System.out.println("Movimetação: " + peao[0].getMovimentacao());
-						System.out.println("Status: " + peao[0].getStatus());
+						System.out.println();
+						for (int i = 0; i < 16; i++) {   // Impressão dos peões
+							System.out.println("Peão " + (i + 1) + ":");
+							peao[i].imprimepeca(r);
+							System.out.println();
+						}
 					}
 					else if(r == 2){
-						System.out.println("\nNome: Torre");
-						System.out.println("Cor: " + torre1.getCor() + " ou " + torre3.getCor());
-						System.out.println("Movimetação: " + torre1.getMovimentacao());
-						System.out.println("Status: " + torre1.getStatus());
+						System.out.println();
+						for(int i = 0; i < 4; i++){
+							torre[i].imprimepeca(r);
+							System.out.println();
+						}
 					}
 					else if(r == 3){
-						System.out.println("\nNome: Cavalo");
-						System.out.println("Cor: " + cavalo1.getCor() + " ou " + cavalo3.getCor());
-						System.out.println("Movimetação: " + cavalo1.getMovimentacao());
-						System.out.println("Status: " + cavalo1.getStatus());
+						System.out.println();
+						for(int i = 0; i < 4; i++){
+							cavalo[i].imprimepeca(r);
+							System.out.println();
+						}
 					}
 					else if(r == 4){
-						System.out.println("\nNome: Bispo");
-						System.out.println("Cor: " + bispo1.getCor() + " ou " + bispo3.getCor());
-						System.out.println("Movimetação: " + bispo1.getMovimentacao());
-						System.out.println("Status: " + bispo1.getStatus());
+						System.out.println();
+						for(int i = 0; i < 4; i++){
+							bispo[i].imprimepeca(r);
+							System.out.println();
+						}
 					}
 					else if(r == 5){
-						System.out.println("\nNome: Rei");
-						System.out.println("Cor: " + rei1.getCor() + " ou " + rei2.getCor());
-						System.out.println("Movimetação: " + rei1.getMovimentacao());
-						System.out.println("Status: " + rei1.getStatus());
+						System.out.println();
+						for(int i = 0; i < 2; i++){
+							rei[i].imprimepeca(r);
+							System.out.println();
+						}
 					}
 					else if(r == 6){
-						System.out.println("\nNome: Rainha");
-						System.out.println("Cor: " + rainha1.getCor() + " ou " + rainha2.getCor());
-						System.out.println("Movimetação: " + rainha1.getMovimentacao());
-						System.out.println("Status: " + rainha1.getStatus());
-					}
+						System.out.println();
+						for(int i = 0; i < 2; i++){
+							rainha[i].imprimepeca(r);
+							System.out.println();
+						}
 				}
 				else{
 					System.out.println("Entrada invalida. Digite novamente");
@@ -138,5 +159,5 @@ public class Programa {
 		}while(!v1);
 
 	}
-
+	}
 }
