@@ -8,8 +8,8 @@ public class Tabuleiro {
 	private String[][] casa;
 
 	public Tabuleiro(){
-		sensorp = new int[8][8]; 
-        casa = new String[8][8];
+		sensorp = new int[8][8]; //instanciaçao do sensor da casa
+        casa = new String[8][8]; //instanciaçao da casa
 		
 		for(int i = 0; i < 8; i++){
 			for(int j = 0; j < 8; j++){

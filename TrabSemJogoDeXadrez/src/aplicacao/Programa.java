@@ -57,34 +57,35 @@ public class Programa {
 		Peca rei[] = new Peca[2];
 		// instanciação dos reis
 		rei[0] = new Peca(/*"rei",*/ "branca", 5, "inativo");
-		rei[1] = new Peca(/*"rei",*/ "branca", 5, "inativo");
+		rei[1] = new Peca(/*"rei",*/ "preta", 5, "inativo");
 
 
 		// criação das rainhas
 		Peca rainha[] = new Peca[2];
 		//instanciação das rainhas
 		rainha[0] = new Peca(/*"rainha",*/ "preta", 6, "inativo");
-		rainha[1] = new Peca(/*"rainha",*/ "preta", 6, "inativo");
+		rainha[1] = new Peca(/*"rainha",*/ "branca", 6, "inativo");
 
 
 		Scanner sc = new Scanner(System.in);
 		int r;
 		boolean v1 = true;
-		boolean v2 = true;
 
-		do{
+		while(v1){
 			System.out.println();
-			System.out.println("Digite '1' para visualizar o tabuleiro (vazio).");
-			System.out.println("Digite '2' para visualizar alguma peça.");
-			do{
-				r = sc.nextInt();
+			System.out.println("Digite '1' para visualizar o tabuleiro.");
+			System.out.println("Digite '2' para visualizar as peça.");
+			r = sc.nextInt();
 
+			if(r != 1 && r != 2) System.out.println("Entrada invalida.");
+			
+			else{
 				if(r == 1){
 					t.imprimetab();
 					System.out.println();
 				}
-				else if(r == 2){
-					System.out.println("\nQual peça vc deseja visualizar?");
+				if(r == 2){
+					System.out.println();
 					System.out.println("Digite '1' para ver o peão.");
 					System.out.println("Digite '2' para ver o torre.");
 					System.out.println("Digite '3' para ver o cavalo.");
@@ -136,28 +137,25 @@ public class Programa {
 							rainha[i].imprimepeca(r);
 							System.out.println();
 						}
+	            	}	
 				}
-				else{
-					System.out.println("Entrada invalida. Digite novamente");
-					System.out.println("'1' para visualizar o tabuleiro (vazio).");
-					System.out.println("'2' para visualizar alguma peça.");
-					v2 = false;
-				}
-			}while(!v2);
+			
 
 			System.out.println("Deseja ver voltar ao inicio? ('1' = sim, '0' = nao)");
 			r = sc.nextInt();
-			if(r == 1) v1 = false;
-			else if(r == 0){
+
+			if(r == 1) {
 				v1 = true;
+			}
+			else{
+				v1 = false;
 				System.out.println();
 				System.out.println("Obrigado <3");
 				System.out.println();
-				
+			}
+	
 			}
 
-		}while(!v1);
-
-	}
+    	}
 	}
 }

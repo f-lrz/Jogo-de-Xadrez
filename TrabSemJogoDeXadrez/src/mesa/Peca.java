@@ -1,5 +1,7 @@
 package mesa;
 
+import Pieces.*;
+
 public class Peca {
     //private String nome;
     private String cor;
