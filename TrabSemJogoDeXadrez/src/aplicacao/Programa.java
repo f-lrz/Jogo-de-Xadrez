@@ -2,6 +2,10 @@ package aplicacao;
 
 import mesa.*;
 import java.util.Scanner;
+
+import javax.print.attribute.SupportedValuesAttribute;
+import javax.swing.plaf.synth.SynthSplitPaneUI;
+
 import java.io.IOException;
 
 public class Programa {
@@ -59,12 +63,58 @@ public class Programa {
 			System.out.println("Digite '2' para visualizar alguma peça.");
 			do{
 				r = sc.nextInt();
+
 				if(r == 1){
 					t.imprimetab();
 					System.out.println();
 				}
 				else if(r == 2){
+					System.out.println("\nQual peça vc deseja visualizar?");
+					System.out.println("Digite '1' para ver o peão.");
+					System.out.println("Digite '2' para ver o torre.");
+					System.out.println("Digite '3' para ver o cavalo.");
+					System.out.println("Digite '4' para ver o bispo.");
+					System.out.println("Digite '5' para ver o rei.");
+					System.out.println("Digite '6' para ver o rainha.");
 
+					r = sc.nextInt();
+
+					if(r == 1){
+						System.out.println("\nNome: Peão");
+						System.out.println("Cor: " + peao[0].getCor() + " ou " + peao[8].getCor());
+						System.out.println("Movimetação: " + peao[0].getMovimentacao());
+						System.out.println("Status: " + peao[0].getStatus());
+					}
+					else if(r == 2){
+						System.out.println("\nNome: Torre");
+						System.out.println("Cor: " + torre1.getCor() + " ou " + torre3.getCor());
+						System.out.println("Movimetação: " + torre1.getMovimentacao());
+						System.out.println("Status: " + torre1.getStatus());
+					}
+					else if(r == 3){
+						System.out.println("\nNome: Cavalo");
+						System.out.println("Cor: " + cavalo1.getCor() + " ou " + cavalo3.getCor());
+						System.out.println("Movimetação: " + cavalo1.getMovimentacao());
+						System.out.println("Status: " + cavalo1.getStatus());
+					}
+					else if(r == 4){
+						System.out.println("\nNome: Bispo");
+						System.out.println("Cor: " + bispo1.getCor() + " ou " + bispo3.getCor());
+						System.out.println("Movimetação: " + bispo1.getMovimentacao());
+						System.out.println("Status: " + bispo1.getStatus());
+					}
+					else if(r == 5){
+						System.out.println("\nNome: Rei");
+						System.out.println("Cor: " + rei1.getCor() + " ou " + rei2.getCor());
+						System.out.println("Movimetação: " + rei1.getMovimentacao());
+						System.out.println("Status: " + rei1.getStatus());
+					}
+					else if(r == 6){
+						System.out.println("\nNome: Rainha");
+						System.out.println("Cor: " + rainha1.getCor() + " ou " + rainha2.getCor());
+						System.out.println("Movimetação: " + rainha1.getMovimentacao());
+						System.out.println("Status: " + rainha1.getStatus());
+					}
 				}
 				else{
 					System.out.println("Entrada invalida. Digite novamente");
