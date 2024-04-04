@@ -1,6 +1,6 @@
 package mesa;
 
-import Pieces.*;
+//import Pieces.*;
 
 public class Peca {
     //private String nome;
@@ -43,7 +43,7 @@ public class Peca {
         status = s;
     }
 
-    public void imprimepeca(int m){
+    public void imprimePeca(int m){
         if(m == 1) System.out.println("Nome: Peao");
         else if(m == 2) System.out.println("Nome: Torre");
         else if(m == 3) System.out.println("Nome: Cavalo");

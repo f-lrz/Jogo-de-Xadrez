@@ -1,6 +1,6 @@
  package mesa;
 
-import javax.swing.plaf.synth.SynthSplitPaneUI;
+//import javax.swing.plaf.synth.SynthSplitPaneUI;
 
 public class Tabuleiro {
 	
