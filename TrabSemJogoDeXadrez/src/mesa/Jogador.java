@@ -3,14 +3,17 @@ package mesa;
 //import mesa.*;
 
 public class Jogador {
-    private String nome;
+    //atributos da classe jogador
+    private String nome; 
     private String cor;
 
+    //construtor da classe jogador
     public Jogador(String nome, String cor){
         setNome(nome);
         setCor(cor);
     }
 
+    //getters e setters da classe jogador
     public String getNome(){
         return nome;
     } 
@@ -23,7 +26,8 @@ public class Jogador {
     public void setCor(String c){
         cor = c;
     }
-
+    
+    //função de imprimir os dados da classe jogador
     public void imprimeJogador(){
         System.out.print("Nome do jogador " + getCor() + ": ");
         System.out.print(getNome());

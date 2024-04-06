@@ -4,9 +4,11 @@
 
 public class Tabuleiro {
 	
+	//atributos da classe Tabuleiro
 	private int[][] sensorp;
 	private String[][] casa;
 
+	//construtor da classe Tabuleiro
 	public Tabuleiro(){
 		sensorp = new int[8][8]; //instanciaçao do sensor da casa
         casa = new String[8][8]; //instanciaçao da casa
@@ -23,6 +25,7 @@ public class Tabuleiro {
 		}
 	}
 
+	//getters e setters da classe Tabuleiro
 	public int getSensorp(int x, int y){
 		return sensorp[x][y];
 	}
@@ -37,6 +40,7 @@ public class Tabuleiro {
 		this.casa[x][y] = casa;
 	}
 
+	//função de imprimir os dados da classe Tabuleiro
 	public void imprimetab() {
 		System.out.println();
 	    System.out.println("   a b c d e f g h");

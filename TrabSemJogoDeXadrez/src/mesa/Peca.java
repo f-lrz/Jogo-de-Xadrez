@@ -3,25 +3,22 @@ package mesa;
 //import Pieces.*;
 
 public class Peca {
-    //private String nome;
+
+    //atributos da classe Peca
     private String cor;
     private int movimentacao;
     private String status;
+    //private String nome;
 
+    //construtor da classe Peca
     public Peca(/*String nome,*/ String cor, int m, String status){
-        //setNome(nome);
         setCor(cor);
         setMovimentacao(m);
         setStatus(status);
+        //setNome(nome);
     }
 
-    /*public String getNome(){
-        return nome;
-    } 
-    public void setNome(String n){
-        nome = n;
-    }*/
-
+    //getters e setters da classe Peca
     public String getCor(){
         return cor;
     } 
@@ -35,23 +32,49 @@ public class Peca {
     public void setMovimentacao(int m){
         movimentacao = m;
     }
-
+    
     public String getStatus(){
         return status;
     } 
     public void setStatus(String s){
         status = s;
     }
+    
+    /*public String getNome(){
+        return nome;
+    } 
+    public void setNome(String n){
+        nome = n;
+    }*/
 
-    public void imprimePeca(int m){
-        if(m == 1) System.out.println("Nome: Peao");
-        else if(m == 2) System.out.println("Nome: Torre");
-        else if(m == 3) System.out.println("Nome: Cavalo");
-        else if(m == 4) System.out.println("Nome: Bispo");
-        else if(m == 5) System.out.println("Nome: Rei");
-        else if(m == 6) System.out.println("Nome: Rainha");
+
+    //função de imprimir os dados da classe Peca
+    public void imprimePeca(){
+        if(getMovimentacao() == 1) {
+            System.out.println("Nome: Peao");
+            System.out.println("Movimentação: avanço de 1 ou 2 casas a frente.");
+        }
+        else if(getMovimentacao() == 2) {
+            System.out.println("Nome: Torre");
+            System.out.println("Movimentação: deslocar-se às casas para frente, para traz ou para os lados.");
+        }
+        else if(getMovimentacao() == 3){
+            System.out.println("Nome: Cavalo");
+            System.out.println("Movimentação: deslocar-se em L para qualquer direção.");
+        }
+        else if(getMovimentacao() == 4) {
+            System.out.println("Nome: Bispo");
+            System.out.println("Movimentação: deslocar-se na diagional para qualquer direção.");
+        }
+        else if(getMovimentacao() == 5) {
+            System.out.println("Nome: Rei");
+            System.out.println("Movimentação: deslocar-se para as casas visinhas.");
+        }
+        else if(getMovimentacao() == 6) {
+            System.out.println("Nome: Rainha");
+            System.out.println("Movimentação: movimentação da Torre, do Bispo e do Rei juntas.");
+        }
         System.out.println("Cor: " + cor);
-        System.out.println("Movimentação: " + movimentacao);
         System.out.println("Status: " + status);
        
    }
