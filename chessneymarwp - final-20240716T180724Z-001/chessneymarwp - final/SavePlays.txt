@@ -1,0 +1,13 @@
+Peão Branco 46 -> 44.
+Peão Preto 51 -> 52.
+Peão Branco 44 -> 43.
+Peão Preto 52 -> 53.
+Peão Branco 43 -> 42.
+Cavalo Preto 60 -> 72.
+Peão Branco 42 -> 31.
+Torre Preto 70 -> 60.
+Rainha Branco 37 -> 46.
+Cavalo Preto 10 -> 22.
+Rainha Branco 46 -> 41.
+Cavalo Preto 72 -> 64.
+Rainha Branco 41 -> 40.
